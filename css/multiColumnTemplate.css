@@ -99,6 +99,7 @@
 	cursor: pointer;
 }
 .secondary_header ul a:link {
+	text-decoration: none
 	list-style: none;
 	float: left;
 	margin-right: auto;
@@ -113,6 +114,7 @@
 	transition: all 0.3s linear;
 }
 .secondary_header ul a:visited {
+	text-decoration: none
 	list-style: none;
 	float: left;
 	margin-right: auto;
