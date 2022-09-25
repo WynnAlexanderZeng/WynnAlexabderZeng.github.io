@@ -98,6 +98,25 @@
 	color: #717070;
 	cursor: pointer;
 }
+.secondary_header ul a {
+	list-style: none;
+	float: left;
+	margin-right: auto;
+	margin-top: 0px;
+	font-family: "Source Sans Pro";
+	font-weight: normal;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	margin-left: auto;
+	text-align: center;
+	width: 16%;
+	transition: all 0.3s linear;
+}
+.secondary_header ul a:hover {
+	color: #717070;
+	cursor: pointer;
+}
+
 .left_article {
 	background-color: #FFFFFF;
 	width: 60%;
