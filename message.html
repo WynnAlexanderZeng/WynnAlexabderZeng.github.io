@@ -1,1 +1,48 @@
-<p>邮箱：Dratigen@163.com</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="content">
+		聊天记录<ul id="words"></ul>
+	</div>
+	<textarea id="msg" row="5" cols="50" placeholder="请输入你的留言……记得留下你的名字！"></textarea>
+	<button id="btn1">留言</button>
+	<button id="btn2">统计</button>
+</body>
+<script type="text/javascript">
+	var btn1=document.getElementById("btn1");
+	var btn2=document.getElementById("btn2");
+	var msg=document.getElementById("msg");
+	var ul=document.getElementById("words");
+	var liCount=0;
+	btn1.onclick=function(){
+		if(msg.value){
+			var li=document.createElement("li");//添加li标签
+			li.innerHTML=msg.value+"&nbsp;&nbsp;&nbsp;&nbsp;<span>删除留言</span>";//在标签中添加内容
+			//li添加到ul中有两种情况，有内容或没内容
+			if(liCount==0){
+				ul.appendChild(li);//追加到后面
+				liCount++;
+			}else{
+				ul.insertBefore(li,ul.childNodes[0]);//最新数据在第一行
+				liCount++;
+			}
+			msg.value="";
+			var span=document.getElementsByTagName('span');
+			for(var i=0;i<span.length;i++){
+				span[i].onclick=function(){
+					ul.removeChild(this.parentNode);
+					liCount--;
+				}
+			}
+		}else{
+			alert("内容不能为空");
+		}
+	}
+	btn2.onclick=function(){
+
+	}
+</script>
+</html>
