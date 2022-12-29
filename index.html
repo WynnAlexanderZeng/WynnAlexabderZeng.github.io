@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Spider King个人网站</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f2f2f2;
+        }
+        #container {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+        }
+        #header {
+            text-align: center;
+            padding: 20px;
+        }
+        #nav {
+            text-align: center;
+            padding: 10px;
+        }
+        #nav a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px;
+        }
+        #nav a:hover {
+            color: #f00;
+        }
+        #main {
+            padding: 20px;
+        }
+        #footer {
+            text-align: center;
+            padding: 10px;
+        }
+        a{
+            font-size: 20px
+        }
+        ul{
+            float: right;
+            list-style-type: none;
+            margin: 15px;
+        }
+        li{
+            display: inline-block;
+            text-align: right;
+			font-size: 10px;
+        }
+        div{
+            border-radius: 10px;
+            user-select: none;
+        }
+        #left{
+            position:absolute;
+            width:98%;
+            text-align: center; 
+            background-color: #fff;
+
+        }
+        #right{
+            position:absolute;
+            top:-10px;
+            right:85px;
+            text-align: center; 
+            background-color: #fff;
+
+        }
+        #__spiderking{
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <li><a href="">主页</a></li>
+            <li><a href="download.html">下载</a></li>
+            <li><a href="blog.html">博客</a></li>
+            <li><a href="friendsite.html">友链</a></li>
+        </div>
+    </div>
+    <br>
+    <script>
+        //Make the DIV element draggagle:
+dragElement(document.getElementById(("left")));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id)) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+    </script>
+
+    <div id="container">
+        <div id="main">
+            <h2>欢迎来到Spider King的个人网站！</h2>
+            <p>这里是Spider King的个人网站，您可以在这里找到我的最新作品，博客，有问题请留言。</p >
+            <p>这里也是计算机技术的交流平台，大家在这里分享自己的见解，经过筛选后把它们放入博客。</p>
+            <p>本站还有一些小彩蛋，有兴趣的朋友可以来找找~</p>
+            <p>希望你们能够玩的愉快！</p>
+            <p id="__spiderking">————Spider King（站长）</p>
+        </div>
+    </div>
+	<br>
+<div id="left">
+        <h2>About Me</h2>
+        <p>属性：个人网站</p>
+        <p>地理位置：种花家 帝都</p>
+        <p>建站人：初中学生</p>
+        <p>开发定位：小工具</p>
+        <p>QQ：2682450071</p>
+    </div>
+	<br>
+	<br>
+	<br>
+	<br>
+    <div id="right">
+      <style>
+
+          /*General */
+          body
+          {
+              font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+              text-align:center;
+          }
+          
+          #feedback-page{
+              text-align:center;
+          }
+          
+          #form-main{
+              width:100%;
+              float:left;
+              padding-top:0px;
+          }
+          
+          #form-div {
+              background-color:#fff;
+              padding-left:35px;
+              padding-right:35px;
+              padding-top:10px;
+              padding-bottom:30px;
+              width: 98%;
+              float: left;
+
+            margin-top:30px;
+            border-radius: 7px;
+            left:20px;
+          }
+          
+          .montform .feedback-input {
+              color:#3c3c3c;
+              font-family: Helvetica, Arial, sans-serif;
+            font-weight:500;
+              font-size: 18px;
+              border-radius: 15px;
+              line-height: 22px;
+              background-color: #f2f2f2;
+              padding: 13px 13px 13px 54px;
+              margin-bottom: 10px;
+              width:100%;
+              box-sizing: border-box;
+              border: 3px solid rgba(0,0,0,0);
+          }
+          /*Inputs styles*/
+          .montform .feedback-input:focus{
+              background: #fff;
+              border: 3px solid #3498db;
+              color: #3498db;
+              outline: none;
+            padding: 13px 13px 13px 54px;
+          }
+          
+          
+          /* Icons ---------------------------------- */
+          .montform  #name{
+              background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-address-book.svg);
+              background-size: 30px 30px;
+              background-position: 11px 8px;
+              background-repeat: no-repeat;
+          }
+          
+          .montform  #name:focus{
+              background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-address-book.svg);
+              background-size: 30px 30px;
+              background-position: 8px 5px;
+            background-position: 11px 8px;
+              background-repeat: no-repeat;
+          }
+          
+          .montform  #email{
+              background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-mail.svg);
+              background-size: 30px 30px;
+              background-position: 11px 8px;
+              background-repeat: no-repeat;
+          }
+          
+          .montform  #email:focus{
+              background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-mail.svg);
+              background-size: 30px 30px;
+            background-position: 11px 8px;
+              background-repeat: no-repeat;
+          }
+          
+          .montform  #comment{
+              background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-pencil.svg);
+              background-size: 30px 30px;
+              background-position: 11px 8px;
+              background-repeat: no-repeat;
+          }
+          
+          .montform  textarea {
+              width: 100%;
+              height: 150px;
+              line-height: 150%;
+              resize:vertical;
+          }
+          
+          .montform  input:hover, .montform  textarea:hover,
+          .montform  input:focus, .montform  textarea:focus {
+              background-color:#e6e6e6;
+          }
+          
+          .button-blue{
+              font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+              float:left;
+              width: 100%;
+              border: #fbfbfb solid 4px;
+              border-radius: 50px;
+              cursor:pointer;
+              background-color: #e3e3e3;
+              color:black;
+              font-size:24px;
+              padding-top:22px;
+              padding-bottom:22px;
+              transition: all 0.3s;
+            margin-top:-4px;
+            font-weight:700;
+          }
+          
+          .button-blue:hover{
+              background-color: rgba(0,0,0,0);
+              color: #f2f2f2;
+          }
+              
+          .montform  .submit:hover {
+              color: #fff;
+          }
+              
+          .ease {
+              width: 0px;
+              height: 74px;
+              border-radius: 50px;
+              background-color: #bfbfbf;
+              transition: .3s ease;
+          }
+          
+          .submit:hover .ease{
+            width:100%;
+            background-color:#bfbfbf;
+          }
+          
+          /*Styles for small screens*/
+          
+          @media only screen and (max-width: 580px) {
+              #form-div{
+                  left: 3%;
+                  margin-right: 3%;
+                  width: 88%;
+                  margin-left: 0;
+                  padding-left: 3%;
+                  padding-right: 3%;
+              }
+          }
+          
+          </style>
+          <div id="form-main"></div>
+          <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=pebe1j1d&n=n1.ratufa.io"></script>
+  </div>
+  <script>
+      //Make the DIV element draggagle:
+dragElement(document.getElementById(("right")));
+
+function dragElement(elmnt) {
+var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+if (document.getElementById(elmnt.id)) {
+  /* if present, the header is where you move the DIV from:*/
+  document.getElementById(elmnt.id).onmousedown = dragMouseDown;
+} else {
+  /* otherwise, move the DIV from anywhere inside the DIV:*/
+  elmnt.onmousedown = dragMouseDown;
+}
+
+function dragMouseDown(e) {
+  e = e || window.event;
+  // get the mouse cursor position at startup:
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  document.onmouseup = closeDragElement;
+  // call a function whenever the cursor moves:
+  document.onmousemove = elementDrag;
+}
+
+function elementDrag(e) {
+  e = e || window.event;
+  // calculate the new cursor position:
+  pos1 = pos3 - e.clientX;
+  pos2 = pos4 - e.clientY;
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  // set the element's new position:
+  elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+  elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+}
+
+function closeDragElement() {
+  /* stop moving when mouse button is released:*/
+  document.onmouseup = null;
+  document.onmousemove = null;
+}
+}
+  </script>
+    <br>
+    </div>
+	<br>
+	<br>
+  <br>
+  <br><br><br><br><br>
+<div id="form-div">
+      <form class="montform" id="reused_form" {{ $enctype }} >
+        <h1>留言</h1>
+        <p class="name">
+          <input name="name" type="text" class="feedback-input" required placeholder="全名" id="name" />
+        </p>
+        <p class="email">
+          <input name="email" type="email" required  class="feedback-input" id="email" placeholder="电子邮箱" />
+        </p>
+        <p class="text">
+          <textarea name="message" class="feedback-input" id="comment" placeholder="留言信息……"></textarea>
+        </p>
+        <div class="submit">
+          <button type="submit" class="button-blue">提交</button>
+          <div class="ease"></div>
+        </div>
+      </form>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	    <div id="container">
+        <div id="footer">
+            &copy; 2022 Spider King. All Rights Reserved.
+        </div>
+</body>
+</html>
