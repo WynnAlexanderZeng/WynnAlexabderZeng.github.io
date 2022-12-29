@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>距离2023年还有：</h1>
+		<h1 id="d"></h1>
+		<h1 id="hour"></h1>
+		<h1 id="minuet"></h1>
+		<h1 id="second"></h1>
+	</body>
+	<script type="text/javascript">
+		function station(x,y,z){
+			//当前时间
+			var now = Date.now(),
+				//结束时间
+				end = new Date(x,y-1,z),
+				ends = end.getTime();
+			var ms = ends - now;
+			var s = Math.floor(ms/1000);
+			//相差天数
+			var day = Math.floor(s / 60 / 60 / 24);
+			//相差小时数
+			var hours = Math.floor(s / 60 / 60 % 24);
+			//相差分钟数
+			var min = Math.floor(s / 60 % 60 );
+			//相差秒数
+			var sec = Math.floor(s % 60 );
+			var html = day+"天";
+			d.innerHTML = html;
+			var html = hours+"时";
+			hour.innerHTML = html;
+			var html = min+"分"
+			minuet.innerHTML = html
+			var html = sec+"秒"
+			second.innerHTML = html
+			if (s == 199200) {
+				window.location.href = 'newyear.html';
+			}
+		}
+		station(2023,01,01);
+		//一秒一次调用
+		setInterval(function(){
+			station(2023,01,01);
+		},1);
+	</script>
+	<style type="text/css">
+		h1{
+			font-size: 50px;
+			font-family:"楷体";
+			text-align: center;
+		}
+		#d{
+			font-size: 90px;
+			font-family:"楷体";
+			text-align: center;
+		}
+		#hour{
+			font-size: 90px;
+			font-family:"楷体";
+			text-align: center;
+		}
+		#minuet{
+			font-size: 90px;
+			font-family:"楷体";
+			text-align: center;
+		}
+		#second{
+			font-size: 90px;
+			font-family:"楷体";
+			text-align: center;
+		}
+	</style>
+</html>
