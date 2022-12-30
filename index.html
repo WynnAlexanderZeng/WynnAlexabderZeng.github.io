@@ -144,10 +144,6 @@ function dragElement(elmnt) {
         <p>开发定位：小工具</p>
         <p>QQ：2682450071</p>
     </div>
-	<br>
-	<br>
-	<br>
-	<br>
     <div id="right">
       <style>
 
@@ -306,7 +302,24 @@ function dragElement(elmnt) {
                   padding-right: 3%;
               }
           }
-          
+          <div id="form-div">
+      <form class="montform" id="reused_form" {{ $enctype }} >
+        <h1>留言</h1>
+        <p class="name">
+          <input name="name" type="text" class="feedback-input" required placeholder="全名" id="name" />
+        </p>
+        <p class="email">
+          <input name="email" type="email" required  class="feedback-input" id="email" placeholder="电子邮箱" />
+        </p>
+        <p class="text">
+          <textarea name="message" class="feedback-input" id="comment" placeholder="留言信息……"></textarea>
+        </p>
+        <div class="submit">
+          <button type="submit" class="button-blue">提交</button>
+          <div class="ease"></div>
+        </div>
+      </form>
+</div>
           </style>
           <div id="form-main"></div>
           <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=pebe1j1d&n=n1.ratufa.io"></script>
@@ -360,24 +373,7 @@ function closeDragElement() {
 	<br>
   <br>
   <br><br><br><br><br>
-<div id="form-div">
-      <form class="montform" id="reused_form" {{ $enctype }} >
-        <h1>留言</h1>
-        <p class="name">
-          <input name="name" type="text" class="feedback-input" required placeholder="全名" id="name" />
-        </p>
-        <p class="email">
-          <input name="email" type="email" required  class="feedback-input" id="email" placeholder="电子邮箱" />
-        </p>
-        <p class="text">
-          <textarea name="message" class="feedback-input" id="comment" placeholder="留言信息……"></textarea>
-        </p>
-        <div class="submit">
-          <button type="submit" class="button-blue">提交</button>
-          <div class="ease"></div>
-        </div>
-      </form>
-</div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	    <div id="container">
         <div id="footer">
