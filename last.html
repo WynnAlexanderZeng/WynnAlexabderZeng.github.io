@@ -44,14 +44,20 @@
 			if ((hours == 0) == false){
 			var html = hours+"时";
 			hour.innerHTML = html;
+			}else{
+			hour.innerHTML = "“
 			}
 			if ((min == 0) == false){
 			var html = min+"分"
 			minuet.innerHTML = html
+			}else{
+			minuet.innerHTML = "“
 			}
 			if ((sec == 0) == false){
 			var html = sec+"秒"
 			second.innerHTML = html
+			}else{
+			second.innerHTML = "“
 			}
 			if (s == 199200) {
 				window.location.href = 'newyear.html';
