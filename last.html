@@ -20,7 +20,6 @@
 	</head>
 	<body>
 		<h1>距离2023年还有：</h1>
-		<h1 id="d"></h1>
 		<h1 id="hour"></h1>
 		<h1 id="minuet"></h1>
 		<h1 id="second"></h1>
@@ -30,7 +29,7 @@
 			//当前时间
 			var now = Date.now(),
 				//结束时间
-		        	end = new Date(x,y-1,z),
+				end = new Date(x,y-1,z),
 				ends = end.getTime();
 			var ms = ends - now;
 			var s = Math.floor(ms/1000);
@@ -42,14 +41,18 @@
 			var min = Math.floor(s / 60 % 60 );
 			//相差秒数
 			var sec = Math.floor(s % 60 );
-			var html = day+"天";
-			d.innerHTML = html;
+			if ((hours == 0) == false){
 			var html = hours+"时";
 			hour.innerHTML = html;
+			}
+			if ((min == 0) == false){
 			var html = min+"分"
 			minuet.innerHTML = html
+			}
+			if ((sec == 0) == false){
 			var html = sec+"秒"
 			second.innerHTML = html
+			}
 			if (s == 199200) {
 				window.location.href = 'newyear.html';
 			}
