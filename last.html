@@ -45,26 +45,31 @@
 			var html = hours+"时";
 			hour.innerHTML = html;
 			}
+			if ((hours == 0) == false){
+			var html = hours+"时";
+			hour.innerHTML = html;
+			}
 			if (hours == 0){
-			hour.innerHTML = "“
+			hour.innerHTML = ""
 			}
 			if ((min == 0) == false){
 			var html = min+"分"
 			minuet.innerHTML = html
 			}
 			if (min == 0){
-			minuet.innerHTML = "“
+			minuet.innerHTML = ""
 			}
 			if ((sec == 0) == false){
 			var html = sec+"秒"
 			second.innerHTML = html
 			}
 			if (sec == 0){
-			second.innerHTML = "“
+			second.innerHTML = ""
 			}
 			if (s == 0) {
 				window.location.href = 'newyear.html';
 			}
+
 		}
 		station(2023,01,01);
 		//一秒一次调用
