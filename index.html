@@ -1,0 +1,327 @@
+<html>
+  <head>
+    <title>Spider King 个人网站</title>
+    <script type="text/javascript">
+      var system ={};  
+        var p = navigator.platform;       
+        system.win = p.indexOf("Win") == 0;  
+        system.mac = p.indexOf("Mac") == 0;  
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);     
+        if(system.win||system.mac||system.xll){
+          window.location.href="http://spider-king.site";  
+        }
+    </script>
+    <style>
+      #nav{
+        position:fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index:999;
+      }
+      #nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      #nav li {
+        padding: 0 50px;
+      }
+      #nav a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #ececec;
+        font-size:20px;
+        padding-top:2%
+      }
+      #hero{
+        color:#fff;
+        text-align:center;
+        position: relative;
+        padding: 280px 0;
+        content: '';
+        background-image: url("./img/index-background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      #hero h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #000;
+        z-index: 1;
+      }
+      #hero p {
+        font-size: 20px;
+        font-weight: bold; 
+        color: #333;
+        z-index:1;
+      }
+      #hero b{
+        color:#000;
+      }
+      #about {
+        position: relative;
+        min-height: 250px;
+        background-color: #f1f1f1;
+        padding: 100px 0; 
+      }
+      #about h2, #about p{
+        width: 70%;
+        margin: auto;
+        text-align:center;
+        padding: 18px;
+        color: #333;
+      }
+      #friendsite {
+        position: relative;
+        min-height: 250px;
+        background-color: #f1f1f1;
+        padding: 100px 0; 
+      }
+      #friendsite h2, #friendsite p, #friendsite a{
+        width: 70%;
+        margin: auto;
+        text-align:center;
+        padding: 18px;
+        color: #333;
+        text-decoration:none;
+      }
+      #friendsite a:hover{
+        color:#d33;
+        text-decoration:underline;
+      }
+      .inner-header{
+        background-color: rgba(0,0,0,1);
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+      .inner-header-icon{
+        color: #ffffff;
+        height: 50px;
+        font-size:25px;
+        text-align: center;
+        float:right;
+        width: 50px;
+        position: relative;
+        -webkit-transition: background 0.5s;
+        -moz-transition: background 0.5s;
+        -o-transition: background 0.5s;
+        transition: background 0.5s;
+      }
+      .inner-header-icon:hover{
+        background-color: rgba(255,255,255,0.2);
+        cursor: pointer;
+      }
+      .inner-header-icon span{
+        position: absolute;
+        left: calc((100% - 25px) / 2);
+        top: calc((100% - 1px) / 2);
+        width: 25px;
+        height: 1px;
+        background-color: rgba(255,255,255,1);
+      }
+      .inner-header-icon span:nth-child(1){
+        transform: translateY(4px) rotate(0deg);
+      }
+      
+      .inner-header-icon span:nth-child(2){
+        opacity: 0;
+      }
+      
+      .inner-header-icon span:nth-child(3){
+        transform: translateY(-4px) rotate(0deg);
+      }
+      
+      
+      .inner-header-icon-click span:nth-child(1){
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: clickfirst;
+        }
+      
+      .inner-header-icon-click span:nth-child(2){
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: clicksecond;
+      }
+      
+      .inner-header-icon-click span:nth-child(3){
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: clickthird;
+        }
+      
+      
+      @keyframes clickfirst {
+        0% {
+          transform: translateY(4px) rotate(0deg);
+          
+        }
+      
+        100% {
+          transform: translateY(0) rotate(45deg);
+        }
+      }
+      @keyframes clicksecond {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      
+      @keyframes clickthird {
+        0% {
+          transform: translateY(-4px) rotate(0deg);
+        }
+      
+        100% {
+          transform: translateY(0) rotate(-45deg);
+        }
+      }	
+      
+      .inner-header-icon-out span:nth-child(1){
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: outfirst;
+        }
+      
+      .inner-header-icon-out span:nth-child(2){
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: outsecond;
+      }
+      .inner-header-icon-out span:nth-child(3){
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        animation-name: outthird;
+        }
+      
+      @keyframes outfirst {
+        0% {
+          transform: translateY(0) rotate(-45deg);
+        }
+      
+        100% {
+          transform: translateY(-4px) rotate(0deg);
+        }
+      }
+      
+      @keyframes outsecond {
+        0% {
+          opacity: 0;
+        }
+      
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes outthird {
+        0% {
+          transform: translateY(0) rotate(45deg);
+        }
+      
+        100% {
+          transform: translateY(4px) rotate(0deg);
+        }
+      }
+      
+      .inner-nav{
+        background-color: rgba(0,0,0,0.9);
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        padding-top: 30px;
+        padding-bottom: 80px;
+        display: none;
+      }
+      .inner-nav a{
+        display: inline-block;
+        line-height: 50px;
+        text-decoration: none;
+        width: 80%;
+        margin-left: 10%;
+        color: #FFFFFF;
+        border-bottom: solid 1px rgba(255,255,255,0.3);
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        font-weight:300;
+      }
+      .inner-nav a:hover{
+        color: rgba(255,255,255,0.4);
+        border-bottom: solid 1px rgba(255,255,255,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- homepage -->
+    <section id="hero">
+      <h1>欢迎来到Spider King的个人网站！</h1>
+      <p>坐标：种花家·帝都（116.4°E，39.8°N）</p>
+      <p>建站人：初中学生</p>
+      <p>属性：个人网站</p>
+      <p>微信：spiderking2010</p>
+      <p>QQ：2682450071</p>
+      <p>注意：本站<b>除定制建站服务外</b>，<b>完全免费</b></p>
+    </section>
+    <nav id="nav">
+      <div class="inner-header">
+        <a style="display:inline-block;" href="./index.html">Spider King 个人网站</a>
+        <div class="inner-header-icon inner-header-icon-out"><span></span><span></span><span></span></div>
+      </div>
+      <div class="inner-nav">
+        <ul>
+          <li><a href="./index.html#about">关于本站</a></li>
+          <li><a href="./download.html">下载</a></li>
+          <li><a href="./blog/index.html">博客</a></li>
+          <li><a href="./index.html#friendsite">友情链接</a></li>
+          <li><a href="javascript:void(alert('移动端暂不支持建站服务，请使用电脑端'))">建站服务</a></li>
+          <li><a href="#message">留言板</a></li>
+        </ul>
+      </div>
+      <script src="https://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+      <script>
+        $(window).load(function () {
+            $(".inner-header-icon").click(function(){
+                $(this).toggleClass("inner-header-icon-click inner-header-icon-out");
+                $(".inner-nav").slideToggle(250);
+            });
+            $(".inner-nav").click(function () {
+                $(".inner-header-icon").click();
+            });
+            $(".nner-nav a").each(function( index ) {
+                $( this ).css({'animation-delay': (index/10)+'s'});
+            });
+        });
+      </script>
+    </nav>
+    <!-- content -->
+    <section id="about">
+      <h2>关于本站</h2>
+      <p>这里是Spider King的个人网站，您可以在这里找到我的最新作品，博客，有问题请留言。</p>
+      <p>这里也是计算机技术的交流平台，大家在这里分享自己的见解，经过筛选后把它们放入博客。</p>
+      <p>希望你们能够玩的愉快！</p>
+    </section>
+    <section id="friendsite">
+      <h2>友情链接——鸣谢</h2>
+      <p><a href="https://zifan.site">Zifan的小站</a>——建站思路提供者</p>
+      <p><a href="https://www.w3school.com.cn/html/index.asp">W3School</a>——HTML+CSS+JS建站教程</p>
+      <p><a href="https://www.godaddy.com/zh-sg">Godaddy</a>——域名提供</p>
+      <p><a href="https://github.com">GitHub</a>——充当了服务器</p>
+    </section>
+    <div id="message">
+      <iframe width="100%" height="480px" src="https://forms.office.com/r/GrDwfYKCuC?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    </div>
+    <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/JxC5SlvCHzuN5kE7/quote.js?theme=#1690FF,#333333,#999999,#333333,#FFFFFF,#1690FF,14&f=14"></script>
+    <p style="text-align:center;">CopyRight &copy; 2023 Spider King. All Rights Reserved.</p>
+  </body>
+</html>
